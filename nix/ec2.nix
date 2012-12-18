@@ -335,12 +335,12 @@ in
     # $ while read system region ami; do echo "        if cfg.region == \"$region\" && config.nixpkgs.system == \"$system\" then \"$ami\" else"; done < amis
     deployment.ec2.ami = mkDefault (
       if cfg.region == "us-east-1" && config.nixpkgs.system == "x86_64-linux" &&  isEc2Hvm then "ami-fd4bc694" else
-      if cfg.region == "eu-west-1" && config.nixpkgs.system == "x86_64-linux" && !cfg.ebsBoot then "ami-732c1407" else
+      if cfg.region == "eu-west-1" && config.nixpkgs.system == "x86_64-linux" && !cfg.ebsBoot then "ami-f80d018c" else
       if cfg.region == "eu-west-1" && config.nixpkgs.system == "x86_64-linux" &&  cfg.ebsBoot then "ami-ba636fce" else
-      if cfg.region == "eu-west-1" && config.nixpkgs.system == "i686-linux"   && !cfg.ebsBoot then "ami-dd90a9a9" else
-      if cfg.region == "us-east-1" && config.nixpkgs.system == "x86_64-linux" && !cfg.ebsBoot then "ami-d9409fb0" else
+      if cfg.region == "eu-west-1" && config.nixpkgs.system == "i686-linux"   && !cfg.ebsBoot then "ami-6a0e021e" else
+      if cfg.region == "us-east-1" && config.nixpkgs.system == "x86_64-linux" && !cfg.ebsBoot then "ami-7d28a514" else
       if cfg.region == "us-east-1" && config.nixpkgs.system == "x86_64-linux" &&  cfg.ebsBoot then "ami-1b981572" else
-      if cfg.region == "us-west-1" && config.nixpkgs.system == "x86_64-linux" && !cfg.ebsBoot then "ami-4996ce0c" else
+      if cfg.region == "us-west-1" && config.nixpkgs.system == "x86_64-linux" && !cfg.ebsBoot then "ami-ba7050ff" else
       # !!! Doesn't work, not lazy enough.
       #throw "I don't know an AMI for region ‘${cfg.region}’ and platform type ‘${config.nixpkgs.system}’"
       "");
